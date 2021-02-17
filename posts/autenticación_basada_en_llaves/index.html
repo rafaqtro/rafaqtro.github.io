@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>autenticación basada en llaves</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css" type="text/css" />
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+<div class="page">
+
+<div class="pageheader">
+<div class="header">
+<span>
+<span class="parentlinks">
+
+<a href="../../">wiki</a>/ 
+
+<a href="../">posts</a>/ 
+
+</span>
+<span class="title">
+autenticación basada en llaves
+
+</span>
+</span>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>Para la autenticación basada en llaves, se genera el par de llaves en la computadora local.</p>
+
+<p>ssh-keygen</p>
+
+<p>Para poner la llave pública en el servidor:</p>
+
+<ul>
+<li><p>Nos loguemaos</p></li>
+<li><p>Creamos el directorio .shh y el archivo .ssh/authorized_keys:
+mkdir .ssh
+touch .ssh/authorized_keys</p></li>
+<li><p>Abrir el archivo:
+nano .ssh/authorized_keys</p></li>
+<li><p>Pegamos el contenido de file.pub en authorized_keys</p></li>
+<li><p>Cambiamos permisos:
+chmod 700 .ssh
+chmod 644 .ssh/authorized_keys</p></li>
+</ul>
+
+
+<p>ssh user@ip -p 22 -i ~/.ssh/file</p>
+
+<p>Para forzar la autenticación basada en llaves:
+ nano /etc/ssh/sshd_config
+ PassworAuthentication yes to no
+ service ssh restart</p>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+
+
+
+
+<div class="pagedate">
+Last edited <span class="date">mié 17 feb 2021 18:27:29 -04</span>
+<!-- Created <span class="date">mié 17 feb 2021 18:27:29 -04</span> -->
+</div>
+
+</div>
+
+
+<!-- from wiki -->
+</div>
+
+</div>
+
+</body>
+</html>
