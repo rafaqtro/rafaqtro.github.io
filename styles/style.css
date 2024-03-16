@@ -1,0 +1,202 @@
+/*Custom properties/variables */
+:root{
+ --main-white: #f0f0f0;
+ --main-silver: #b8b8b8;
+ --main-dark-grey: #9b9b9b;
+ --main-gray: #303841;
+ --black: black;
+ --dim-grey: #5f5f5f;
+}
+
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* box-sizing and font-sizing */
+*,
+*::before,
+*::after{
+  box-sizing: inherit;
+}
+
+html{
+   box-sizing: boder-box;
+   /* Set font size for easy rem calculations
+   * default document font size = 16px, 1rem = 16px,
+   100% = 16px
+   * (100% / 16px) * 10 = 62.5% 1rem = 10px, 62.5% = 10px */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+/* Base Styles*/
+body{
+  font-family: sans-serif;
+  font-size: 1.8rem; /* 18px */
+  font-weight: 400;
+  line-height: 1.4;
+  color: #333;
+  background-color: #fff;
+}
+
+h1,h2{
+  font-family: sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+h1{
+  font-size: 6rem;
+}
+
+h2{
+  font-size: 4.2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+img{
+  display: block;
+  width: 100%;
+}
+
+/*nav*/
+.nav{
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,.75); 
+  z-index: 10;
+  
+}
+
+.nav-list{
+  display: flex;
+  margin-right: 2rem;
+}
+
+.nav-list a{
+  display: block;
+  font-size: 2.2rem;
+  padding: 2rem;
+  color: var(--main-dark-grey);
+}
+
+.nav-list a:hover{
+  color: black;
+}
+
+/* Welcome Section */
+
+.welcome{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh; 
+}
+
+.welcome p{
+  color: var(--main-silver);
+  font-size: 3rem;
+  font-weight: 200;
+  font-style: italic;
+  line-height: 36px;
+ /*width: 50%;*/ 
+}
+
+/* Project Section */
+
+.projects{
+  text-align: center;
+  padding: 10rem 2rem;
+}
+
+.projects-header{
+  max-width: 640px;
+  margin: 0 auto 6rem auto;
+  /*border-bottom: 0.2rem solid;*/
+}
+
+/* "Automagic" image grid using no media queries */
+
+.projects-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 4rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+  
+}
+
+.project {
+  background: var(--main-silver);
+  box-shadow: 1px 1px 2px rgba(0,0,0, 0.5);
+  border-radius: 2px;
+}
+
+.project:hover{
+  box-shadow: 1px 1px 10px -2px var(--dim-grey);
+}
+
+.project-image {
+  height: calc(100% - 6.8rem);
+  width: 100%;
+  object-fit: cover;
+}
+
+.project-title{
+  font-size: 2rem;
+  padding: 2rem 0.5rem;
+  color: #333;
+}
+
+/* Contact Section */
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+  padding: 0 2rem 4rem 2rem;
+}
+
+.contact-section-header > h2 {
+  font-size: 5rem;
+}
+
+.contact-links{
+  display: flex;
+  justify-content: center;  
+  width: 100%;
+  max-width: 980px;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+}
+
+.contact-details{
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 2.4rem;
+  transition: transform 0.3s ease-out;
+  color: var(--main-dark-grey);
+}
+
+.contact-details:hover{
+  transform: translateY(8px);
+  color:  var(--black); 
+}
